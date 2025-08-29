@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>USDT Earn Dashboard</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <div class="brand">Earn Dashboard</div>
+        <nav class="nav-links">
+          <a href="#overview">Overview</a>
+          <a href="#allocation">Allocation</a>
+          <a href="#apr">APR</a>
+          <a href="#limits">Limits</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="overview">
+        <div class="container hero-inner">
+          <div>
+            <div class="pill">Your total assets in USDT Earn</div>
+            <h1 class="hero-amount">31,750.29 <span class="unit">USDT</span></h1>
+            <p class="hero-sub">Live snapshot. Values mirror the screenshot.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="container content-grid">
+        <div class="left-col">
+          <article class="card" id="allocation">
+            <div class="card-title">Your asset allocation</div>
+            <div class="row labels">
+              <div>Applied APR</div>
+              <div class="right">Your USDT asset</div>
+            </div>
+            <div class="row values">
+              <div class="apr">23%</div>
+              <div class="right asset">31,750.29</div>
+            </div>
+          </article>
+
+          <article class="card" id="apr">
+            <div class="card-title">Your Max. APR</div>
+            <div class="max-apr-value">23.00%</div>
+            <p class="hint">
+              Max APR <a href="#" class="link">first applies to Premium Earn</a>, up to the cap.
+              The rest gets the standard APR.
+            </p>
+          </article>
+        </div>
+
+        <aside class="right-col" id="limits">
+          <article class="card donut-wrap">
+            <div class="donut" data-current="31750" data-cap="200000">
+              <div class="donut-center">
+                <div class="center-top">31,750.29</div>
+                <div class="center-mid">/ 200,000.00</div>
+                <div class="center-btm">USDT</div>
+              </div>
+            </div>
+            <p class="caption">
+              This chart shows the balance limit for Trading Bonus APR, which shares the max cap with Premium Earn.
+            </p>
+          </article>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-left">© 2025 Earn Demo. For display only.</div>
+        <div class="footer-right">
+          <a href="#">Docs</a>
+          <a href="#">Support</a>
+          <a href="#">Status</a>
+        </div>
+      </div>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
+  </html>
+
+
