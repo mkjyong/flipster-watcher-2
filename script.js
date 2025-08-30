@@ -1,3 +1,24 @@
+// Global amount setup — populate placeholders before other logic runs
+(function () {
+  const USDT_TOTAL = 32023.29;
+  const formattedUsdt = new Intl.NumberFormat('en-US', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }).format(USDT_TOTAL);
+
+  // Fill every span/div with class "usdt-total"
+  document.querySelectorAll('.usdt-total').forEach((el) => {
+    el.textContent = formattedUsdt;
+  });
+
+  // Ensure the donut chart knows the current amount
+  const donutEl = document.querySelector('.donut');
+  if (donutEl) {
+    donutEl.setAttribute('data-current', USDT_TOTAL.toString());
+  }
+})();
+
+
 (function () {
   const donuts = document.querySelectorAll('.donut');
   donuts.forEach((el) => {
