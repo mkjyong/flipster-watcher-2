@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>자금운용 규정 v1.2</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <style>
+      main {
+        padding: 60px 0 80px;
+      }
+      .doc {
+        max-width: 840px;
+        margin: 0 auto;
+        padding: 0 24px;
+        line-height: 1.7;
+      }
+      .doc h1 {
+        font-size: 34px;
+        margin-bottom: 24px;
+      }
+      .doc h2 {
+        font-size: 24px;
+        margin: 34px 0 14px;
+      }
+      .doc h3 {
+        font-size: 18px;
+        margin: 22px 0 10px;
+      }
+      .doc ul {
+        padding-left: 20px;
+        list-style: disc;
+      }
+      .doc li { margin: 6px 0; }
+      .muted { color: var(--muted); }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <div class="brand">Earn Dashboard</div>
+        <nav class="nav-links">
+          <a href="./index.html">Overview</a>
+          <a href="#">Strategy Docs</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <article class="doc">
+        <h1>자금운용 규정 v1.1</h1>
+
+        <h2>0) 목적·범위</h2>
+        <ul>
+          <li>목표: 원금 방어를 전제로 ETH↑ vs BTC 상대강도 트레이딩 + 상위 코인 그리드로 변동성 수확.</li>
+          <li>지양: 고레버리지/선물 과도 사용, 검증 없는 알트 몰빵.</li>
+        </ul>
+
+        <h2>1) 계정·보안·권한</h2>
+        <ul>
+          <li>계정: 내 본인 계정으로 운용. 보안 정책 완료 후 비밀번호 공유(2차 인증 필수).</li>
+          <li>합의되지 않은 입·출금은 차단. 확인 필요 시 2FA 절차로 진행.</li>
+          <li>단말: 보안 확보된 핸드폰(공기계) 에서만 거래.</li>
+          <li>출금 통제: 화이트리스트 + 24–48h 지연 + 2인 승인(4-eyes).</li>
+          <li>레일 이원화: 주=빗썸, 보조=업비트(동일 화이트리스트 사전 등록, 월 1회 소액 테스트).</li>
+        </ul>
+
+        <h2>2) 전략 구성 (두 축)</h2>
+        <h3>A. ETH 롱 / BTC 숏 페어 트레이드</h3>
+        <ul>
+          <li>의도: ETH가 BTC 대비 아웃퍼폼할 때 스프레드 수익.</li>
+          <li>파생 가능: ETH Long / BTC Short, 총 레버리지 ≤ 1–2x.</li>
+          <li>파생 불가: 현물 비중으로 ETH 오버웨이트, BTC 언더웨이트.</li>
+          <li>헤지 비율 k: 60–90일 변동성 기준 k≈0.8(기본), 주 1회 재조정.</li>
+          <li>진입: ETHBTC 상방 모멘텀(20/50MA↑) + 펀딩·스프레드 유리 구간에 분할.</li>
+          <li>청산/축소: 스프레드 손실 −3%/일 또는 −7% 누적, 혹은 모멘텀 반전 시.</li>
+        </ul>
+        <h3>B. 상위 코인 그리드 (변동성 수확)</h3>
+        <ul>
+          <li>대상: 유동성 상위 중 거래소 지원(예: BTC, ETH, SOL, BNB, XRP, ADA, DOGE, TON, TRX, AVAX).</li>
+          <li>동시 가동: 최대 3개 페어.</li>
+          <li>시장 국면별 프리셋(주 1회 갱신, 급변 시 즉시 수정)</li>
+          <li>상승장: 범위 중단~상단, 간격 1.2–1.8%, 레벨 20–30, 매도 비중↑</li>
+          <li>횡보기: 범위 중심대칭, 간격 0.8–1.2%, 레벨 30–40, 균형</li>
+          <li>하락장: 범위 하단 치우침, 간격 1.5–2.5%, 레벨 15–25, 포지션 50–70%로 축소</li>
+          <li>리셋: 가격이 설정 범위 ±15% 이탈 또는 일중 변동성 급등 시 즉시 재설정.</li>
+        </ul>
+
+        <h2>3) 리스크 한도</h2>
+        <ul>
+          <li>총 익스포저: 총자산 ≤ 1.5x(파생 합산).</li>
+          <li>ETH/BTC 스프레드: −3%/일, −7% 누적 → 축소/중지.</li>
+          <li>단일 그리드 페어: −5% 누적 → 간격 확대·레벨 축소.</li>
+          <li>포트폴리오 DD: −15% 경보 / −20% 축소 / −30% 일시중지.</li>
+          <li>이벤트 회피: FOMC·ETF 등 빅 이벤트 ±24h 신규 진입 중단.</li>
+        </ul>
+
+        <h2>4) 실행 루틴</h2>
+        <ul>
+          <li>매일(거래일): 전일 P&L 체크 → ETH/BTC k 점검 → 그리드 보충/리셋 여부 판단.</li>
+          <li>매주: 시장 국면 판정(상승/횡보/하락) → 프리셋 업데이트, 스프레드 룰 재확인.</li>
+          <li>긴급: 일중 ±7% 이상 급변·유동성 급감 시 그리드 일시중지/간격 확대.</li>
+        </ul>
+
+        <h2>5) 자금·입출금</h2>
+        <ul>
+          <li>버퍼: 현금/스테이블 10–20% 상시 유지(급변 대응·출금 대비).</li>
+          <li>입금: 합의된 창구·메모만 수령(트래블룰 준수).</li>
+          <li>출금: 사전 합의·분할·화이트리스트 한정(심사 리스크 최소화).</li>
+          <li>페일오버: 빗썸 장애 시 업비트 즉시 사용(주소 사전 등록·소액 테스트 완료 전제).</li>
+        </ul>
+
+        <h2>6) 투명성</h2>
+        <ul>
+          <li>실시간 잔액 사이트만 유지(잔액/포지션/익스포저 확인용).</li>
+          <li>원본 증빙(선택): 요청 시에만 거래소 CSV/PDF 원본 공유(원하면 SHA-256 해시 동봉).</li>
+        </ul>
+
+        <h2>7) 예외·중단 트리거</h2>
+        <ul>
+          <li>거래소 공지(출금 지연/상폐/지갑 점검) → 해당 페어 즉시 축소/정지.</li>
+          <li>체인 혼잡·수수료 급등 → 그리드 간격 확대·체결 수 축소.</li>
+          <li>규제·보안 이슈 발생 → 신규 진입 중단, 보유 포지션 방어 모드.</li>
+        </ul>
+
+        <h2>8) 변경 관리</h2>
+        <ul>
+          <li>본 문서 버전드 관리. 주간 프리셋 변경·리스크 한도 수정 시 개정일 표기.</li>
+        </ul>
+
+        <h2>기본 파라미터(초기값)</h2>
+        <ul>
+          <li>ETH/BTC k: 0.8 (주 1회 재조정)</li>
+          <li>그리드 간격/레벨: 0.8–2.5% / 15–40 (국면별 프리셋 적용)</li>
+          <li>버퍼: 15% 중심(10–20% 가변)</li>
+          <li>컷 기준: 스프레드 −3%/일, −7% 누적 / 단일 그리드 −5% 누적</li>
+        </ul>
+
+        <p>원하면 너가 돌릴 구체 페어 1–3개만 알려줘. 위 프리셋 숫자 바로 맞춰서 <strong>배치표(체크리스트형)</strong>으로 뽑아줄게.</p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-left">© 2025 Earn Demo. For display only.</div>
+        <div class="footer-right">
+          <a href="./index.html">Dashboard</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
