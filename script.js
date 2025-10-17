@@ -3,7 +3,7 @@
   const USDT_TOTAL = 85632.47;
   const formattedUsdt = new Intl.NumberFormat('en-US', {
     minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
+    maximumFractionDigits: 2, 
   }).format(USDT_TOTAL);
 
   // Fill every span/div with class "usdt-total"
