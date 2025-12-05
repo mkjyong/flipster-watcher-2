@@ -13,7 +13,7 @@
 
   // Ensure the donut chart knows the current amount
   const donutEl = document.querySelector('.donut');
-  if (donutEl) {tnt
+  if (donutEl) {
     donutEl.setAttribute('data-current', USDT_TOTAL.toString());
   }
 })();
