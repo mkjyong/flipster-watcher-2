@@ -1,6 +1,6 @@
 // Global amount setup — populate placeholders before other logic runs
 (function () {
-  const USDT_TOTAL = 100609.73;
+  const USDT_TOTAL = 102086.93;
   const formattedUsdt = new Intl.NumberFormat('en-US', {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2, 
@@ -13,7 +13,7 @@
 
   // Ensure the donut chart knows the current amount
   const donutEl = document.querySelector('.donut');
-  if (donutEl) {
+  if (donutEl) {tnt
     donutEl.setAttribute('data-current', USDT_TOTAL.toString());
   }
 })();
