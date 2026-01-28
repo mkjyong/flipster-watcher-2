@@ -1,6 +1,6 @@
 // Global amount setup — populate placeholders before other logic runs
 (function () {
-  const USDT_TOTAL = 66958.71;
+  const USDT_TOTAL = 70306.64;
   const formattedUsdt = new Intl.NumberFormat('en-US', {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2, 
